@@ -57,6 +57,30 @@ addProductButton.addEventListener('click', () => {  //create a function that whe
     inventoryList.appendChild(newProduct);}) //link the new product to the inventory list 
 
 
+//Task 4: Business Customer Section - Handling Event Bubbling
+const custSec = document.getElementById('customerSection'); //pull the parent container for the customer section by the id
+const customerCards = document.querySelectorAll('.customer-card') //pull the customercards from the html that contain the class 
+
+custSec.addEventListener('click', () => { //add an event listner so that when the customer section is clicked, it logs the message
+    console.log(`Customer section clicked`);}); 
+
+customerCards.forEach((item) =>{ //for each customer card so the following
+    item.addEventListener('click', (event) => { //when the item is clicked do the following
+        console.log(`Customer card clicked`); //log to the console that the customer card was clicked
+        event.stopPropagation(); //stopping the propagation makes it so that only the customer card is clicked 
+        })  //if you remove the stop propagation, it will make it so both the customer card and section are clicked together
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
 
