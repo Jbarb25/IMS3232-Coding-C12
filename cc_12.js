@@ -42,6 +42,24 @@ arrayOfNodes.forEach( item => {  //for every item in the array of nodes, do the 
     item.style.color = "#062e03";}); //chance the text color to dark green in the printed html file
 
 
+//Task 3: Dynamic Inventory Management - Adding and Removing Items
+const inventoryList = document.getElementById('inventoryList');  //pull the inventory list by its ID inventoryList
+const addProductButton = document.getElementById('add-product'); //pull the add product button by its ID add-product
+
+addProductButton.addEventListener('click', () => {  //create a function that when the add product button is clicked, it does the following
+    const newProduct = document.createElement('li'); //create element as a list that is a new product
+    newProduct.setAttribute('class', 'product-item'); //set the class attribute of the product as a product item
+    newProduct.textContent = "New Product Item"; //print the text "new product item" to the html file display
+
+    newProduct.addEventListener('click', () =>{ //add a new function that removes a specific <li> when it is clicked
+        inventoryList.removeChild(newProduct);}); //remove the new product added from the 
+
+    inventoryList.appendChild(newProduct);}) //link the new product to the inventory list 
+
+
+
+
+
 
 
 
